@@ -1,59 +1,63 @@
 # Hey, I’m Sahil 👋
 
-**I build ~~game-playing engines, neural systems, native game ports, languages, and the occasional one-day project~~ whatever I want to build!**
+**I build ~~game-playing engines, neural systems, native game ports, languages, and the occasional one-day project~~ whatever I want to build.**
 
-I don’t stay in one lane, but I’m zooming in on neural-network work: policy/value learning, NNUEs, self-play, training pipelines, and agents that have to make decisions inside real game systems. My GitHub is the lab where I test those ideas.
+The pattern lately is pretty obvious, though: board-game engines, neural agents, self-play, native tooling, and experiments where the result has to survive contact with actual rules.
 
-> A talent to always be on the spark.
+> A talent for always being on the spark.
 >
-> Sometimes I deliver in a day, sometimes I disappear into a weeks-long project.
+> Sometimes I deliver in a day; sometimes I disappear into weeks-long builds.
 
-## My current priority queue
+## What I’m working on now
 
-### 1. [Genseki](https://github.com/SahilKDas/Genseki) — the main quest
+### [Skallagrim](https://github.com/SahilKDas/Skallagrim) — neural Hnefatafl research
 
-I’m building a C++26/Python **Hive** engine lab. **Alpha** is the native UHP engine and GUI line, built from properly attributed MIT-licensed engine foundations. **Rho** is a separate policy/value research track with its own rules service, self-play data, and training experiments.
+Skallagrim is my Rust/Python Copenhagen Hnefatafl engine and research platform. It has a native `tiny-skia` GUI, a dedicated Rust referee, reproducible match tooling, and three competing neural/search ideas:
 
-Right now I’m iterating on engine strength, rules reliability, the GUI, and all the small details that turn an experiment into something people can actually play with. But in all informality? I SAW A SMALL BOT ECOSYSTEM FOR A BIG-PLAYERBASE BOARD GAME AND DECIDED IT'S MINE
+- **Rho:** CNN policy/value evaluation with MCTS
+- **Iota:** NNUE evaluation with alpha-beta search
+- **Beta:** NNUE evaluation with MCTS
 
-### 2. [64DS-DX](https://github.com/SahilKDas/64DS-DX)
+The first 750-game campaign is complete, but I’m not turning that into a fake “best engine ever” claim. Timing failures, rules disagreements, and a long-soak timeout still matter. The fun part is building the evidence, not just posting the largest number.
 
-My Super Mario 64 DS PC-port lane, built on the credited work in [sm64ds-decomp](https://github.com/tangosdev/sm64ds-decomp) and [sm64ds-coop-port](https://github.com/SCOPIC64/sm64ds-coop-port). I keep the downstream synchronized while working toward a cleaner native port and integration path.
+### [tangOS-Native](https://github.com/SahilKDas/tangOS-Native) — decompilation tooling without the browser tax
 
-### 3. [MK7-Native](https://github.com/SahilKDas/MK7-Native)
+I’m working on a native fork of [tangosdev/tangOS](https://github.com/tangosdev/tangOS). The main focus is **TangOS Lite**: a portable C++/Win32/TinySkia workbench for decompilation repositories, reviewed Git operations, GitHub integration, live progress, and repeatable release checkpoints.
 
-An early C++26 project aimed at running Mario Kart 7 natively on PCs and laptops. It has an external-ROM workflow, a CMake toolchain, an SDL3/Vulkan host, and a growing runtime layer for 3DS services, input, saves, and graphics.
+The original project and retained web implementation remain credited and useful as the parity reference. “It builds” is not the same thing as “native parity is complete.”
 
-### 4. [Eloi](https://github.com/SahilKDas/Eloi/tree/v4.0.0) — paused
+### [OpenShobu](https://github.com/OpenShobu) — giving a niche board game real developer infrastructure
 
-Eloi started as my chess-engine rabbit hole. Its `v4.0.0` branch uses **Rust 2024** and adds a separate 14×14 four-player chess core, FFA and Teams modes, a native GUI, a three-thread baseline search, and Kaggle-ready self-play/training scaffolding—while keeping the existing two-player UCI and Lichess routes around.
+I’m also working on Shōbu tooling through OpenShobu:
 
-I’m **not actively working on Eloi right now**. It stays fourth in the queue and remains paused until someone takes on and completes the `v4.0.0` Kaggle program for me. Honestly? I *rreally* dont want to be doing that.
+- **[Universal Shōbu Protocol Specifications](https://github.com/OpenShobu/Universal-Shobu-Protocol-Specifications):** formal rules, SFEN state serialization, SSGF saved games, USP 1.0, conformance tests, and examples in six languages.
+- **[cani](https://github.com/OpenShobu/cani):** a dependency-free Rust rules SDK with a C ABI, a C++26 value wrapper, and a protocol engine.
 
-## Still somewhere in the lab
+### The native-port lane
 
-- **[LFE-NNUE](https://github.com/SahilKDas/LFE-NNUE)** is complete. Its too amazing for me to describe it here in 1 sentence, check the README
-- **[SM3DL-Recomp](https://github.com/SahilKDas/SM3DL-Recomp)** is planned for **JANUARY 2027**. The repository is a marker, not a claim that development has started. It's pretty blunt - I'm going to recomp Super Mario 3D Land for native hardware.
-- **[HexQuoridor-3P](https://github.com/SahilKDas/HexQuoridor-3P)** is a Java experiment I’m keeping around because failed projects are still useful evidence—especially when the lesson is “plan first.”
-- **[RoseWind](https://github.com/SahilKDas/RoseWind)**, **[ALK](https://github.com/SahilKDas/ALK)**, and **[Colubrid](https://github.com/SahilKDas/Colubrid)** are some of my old language-and-interpreter detours.
+- **[MK7-Native](https://github.com/SahilKDas/MK7-Native)** now reaches scene-geometry submission and real pixel output, with PICA vertex loading, texture/TEV decoding, HID progress, persistent saves, and synchronized presentation.
+- **[64DS-DX](https://github.com/SahilKDas/64DS-DX)** stays synchronized with the credited SM64DS decompilation/co-op foundations while I work on port integration and additions such as fifth-character support.
+
+## Shipped, archived, or still mutating
+
+- **[Genseki](https://github.com/SahilKDas/Genseki)** is over and archived. Alpha won the argument; my learned Nu line never beat it. The engine, GUI, review tooling, gauntlets, evidence, and failed neural research stay public.
+- **[LFE-NNUE](https://github.com/SahilKDas/LFE-NNUE)** shipped a native v1.0 evolutionary ecosystem—and apparently “complete” still left room for deterministic 2.5D habitats and elevation.
+- **[Eloi](https://github.com/SahilKDas/Eloi/tree/v4.0.0)** remains paused until somebody takes on its four-player Kaggle program.
+- **[SM3DL-Recomp](https://github.com/SahilKDas/SM3DL-Recomp)** is still a January 2027 project, not fake progress wearing a README.
 
 ## The stuff I reach for
 
-`C++` · `Rust` · `Python` · `TypeScript` · `JavaScript` · `Vulkan` · `Skia` · `Bun`
+`Rust` · `C++` · `Python` · `TypeScript` · `JavaScript` · `Vulkan` · `TinySkia` · `CMake` · `Cargo` · `Bun`
 
-I like everything aslong as everything likes me back!
+I like neural systems, engine architecture, reproducible experiments, native applications, and honest failure reports. I also like everything else, as long as everything else likes me back.
 
 ## Where I’m going
 
-I'm aiming for **Google DeepMind**. ummm... thats all?
+I **will apply to Google DeepMind**.
 
-## A fair warning
+Until then, I’m turning the gap between curiosity and research engineering into public work I can explain: the rules, the data, the model, the evaluation, the failure, and the system around it.
 
-I make a lot of repositories. Some become long-term projects, some are hackathon sprints, and some exist because I needed to know whether a strange idea would work.
-
-I archive experiments when they’ve taught me what I needed. The curiosity usually survives and reappears somewhere stranger.
-
-## Say hi on Discord (lordhank2)!
+## Say hi on Discord
 
 I’m open to software-engineering roles, open-source collaboration, and developer friends who enjoy difficult or slightly weird projects.
 
